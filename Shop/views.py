@@ -6,3 +6,6 @@ def mainpage(request):
 
 def about(request):
     return HttpResponse('about')
+
+def product(request):
+    return HttpResponse('product')
