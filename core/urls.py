@@ -16,13 +16,15 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 
-from Shop.views import mainpage, about
+from Shop.views import mainpage, about, users, archive
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',mainpage),
-    path('about/', about),
-    path('products/',include('Shop.urls') )
+    path('about/<int:about_id>', about),
+    path('products/',include('Shop.urls') ),
+    path('users/<slug:users_id>',users),
+    re_path(r"^archive/(?P<year>[0-9]{4})/$", archive)
 ]
