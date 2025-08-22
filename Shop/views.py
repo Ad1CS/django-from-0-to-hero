@@ -9,3 +9,7 @@ def about(request):
 
 def product(request):
     return HttpResponse('product')
+
+def categories(request, cat_id):
+    return HttpResponse(f'Category:{cat_id}')
+
