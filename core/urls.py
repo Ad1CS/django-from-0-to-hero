@@ -23,8 +23,8 @@ from Shop.views import mainpage, about, users, archive
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',mainpage),
-    path('about/<int:about_id>', about),
-    path('products/',include('Shop.urls') ),
+    path('about', about),
+    path('products/<int:products_id>',include('Shop.urls') ),
     path('users/<slug:users_id>',users),
     re_path(r"^archive/(?P<year>[0-9]{4})/$", archive)
 ]
