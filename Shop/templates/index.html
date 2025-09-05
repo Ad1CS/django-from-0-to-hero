@@ -9,15 +9,29 @@
     main-page
 </h1>
 <h2>
-    {%for i in lst%}
+    {%for i in products%}
     <h1>
-        {% if i|add:"0" == i %}
+      name:  {{i.Title}}
+        </h1>
 
-
-        {{i}}
-
-        {% endif %}
+    <h1>
+      Price:  {{i.Price}}
+        </h1>
+    <h1>
+      stock:  {{i.Stock}}
     </h1>
+    <h1>
+      content:  {{i.Content}}
+    </h1>
+    <h1>
+       Created: {{i.Time_created}}
+    </h1>
+    <h1>
+      updated:  {{i.Last_update}}
+    </h1>
+    <br>
+
+    <hr>
 
 
     {% endfor %}

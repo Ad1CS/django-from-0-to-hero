@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from Shop.models import Product
 class MyClass:
     def __init__(self, a, b):
         self.a = a
@@ -16,7 +17,8 @@ def mainpage(request):
         'dict': {'key_1': 'value_1', 'key_2': 'value_2'},
         'obj': MyClass(10, 20),
     }
-    return render(request, 'index.html', data)
+    objects=Product.objects.all()
+    return render(request, 'index.html', {'products':objects})
 
 def about(request):
     return render(request, 'about.html',{'menu':menu})
