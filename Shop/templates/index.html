@@ -9,7 +9,18 @@
     main-page
 </h1>
 <h2>
-    {{title}}
+    {%for i in lst%}
+    <h1>
+        {% if i|add:"0" == i %}
+
+
+        {{i}}
+
+        {% endif %}
+    </h1>
+
+
+    {% endfor %}
 </h2>
 </body>
 </html>

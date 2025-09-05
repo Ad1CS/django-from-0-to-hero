@@ -19,7 +19,7 @@ def mainpage(request):
     return render(request, 'index.html', data)
 
 def about(request):
-    return render(request, 'about.html')
+    return render(request, 'about.html',{'menu':menu})
 
 def product(request, products_id):
     return render(request, 'products.html')
